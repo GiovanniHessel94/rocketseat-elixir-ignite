@@ -4,8 +4,7 @@ defmodule Rockelivery.User do
   import Ecto.Changeset
 
   alias Ecto.Changeset
-
-  @primary_key {:id, :binary_id, autogenerate: true}
+  alias Rockelivery.Order
 
   @required_params [
     :password,
@@ -21,6 +20,7 @@ defmodule Rockelivery.User do
 
   @derive {Jason.Encoder, only: [:id, :address, :age, :cpf, :email]}
 
+  @primary_key {:id, :binary_id, autogenerate: true}
   schema "users" do
     field :address, :string
     field :age, :integer
@@ -30,6 +30,8 @@ defmodule Rockelivery.User do
     field :password, :string, virtual: true
     field :password_hash, :string
     field :name, :string
+
+    has_many :orders, Order
 
     timestamps()
   end

@@ -17,7 +17,7 @@ defmodule RockeliveryWeb.UsersViewTest do
              user: %User{
                address: "Rua Endereço, 25",
                age: 30,
-               cep: "18080800",
+               cep: "01001000",
                cpf: "00987654321",
                email: "person@person.com",
                id: "a6e2b0ff-3f64-44d7-bbbc-5364e6612980",

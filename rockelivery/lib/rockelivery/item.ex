@@ -3,6 +3,8 @@ defmodule Rockelivery.Item do
 
   import Ecto.Changeset
 
+  alias Rockelivery.Order
+
   @required_params [:category, :description, :price, :photo]
   @item_categories [:food, :drink, :dessert]
 
@@ -15,7 +17,7 @@ defmodule Rockelivery.Item do
     field :price, :decimal
     field :photo, :string
 
-    many_to_many :items, Item, join_through: "orders_items"
+    many_to_many :orders, Order, join_through: "orders_items"
 
     timestamps()
   end

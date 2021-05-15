@@ -10,6 +10,8 @@ use Mix.Config
 config :rockelivery,
   ecto_repos: [Rockelivery.Repo]
 
+config :rockelivery, Rockelivery.Users.Create, via_cep_adapter: Rockelivery.ViaCep.Client
+
 config :rockelivery, Rockelivery.Repo,
   migration_primary_key: [type: :binary_id],
   migration_foreign_key: [type: :binary_id]
@@ -29,6 +31,8 @@ config :logger, :console,
 
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason
+
+config :tesla, adapter: Tesla.Adapter.Hackney
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.

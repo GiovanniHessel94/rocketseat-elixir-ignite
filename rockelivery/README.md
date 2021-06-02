@@ -1,3 +1,3 @@
 # Rockelivery
 
-Codebase of the fourth, fifth, sixth and seventh module project
+Codebase of the fourth, fifth, sixth, seventh and eighth modules project
